@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+    <div class="contactpage">
+        <div class="contactcard">
+
+            <div class="contact">
+                <h2>Contact Us</h2>
+
+                <form onsubmit="sendEmail(); reset(); return false;">
+                    <div class="input-box">
+                        <div class="input-filed field">
+                            <input type="text" placeholder="Full Name" id="name" class="item" autocomplete="off" />
+                        </div>
+                        <div class="input-filed field">
+                            <input type="text" placeholder="Phone Number" id="phone" class="item" autocomplete="off" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="input-filed field">
+                            <input type="text" placeholder="Email Address" id="email" class="item" autocomplete="off" />
+                        </div>
+                    </div>
+
+                    <div class="textarea-field field">
+                        <textarea id="message" cols="30" rows="10" placeholder="Your Message" class="item"></textarea>
+                    </div>
+
+                    <button type="submit">Send Message</button>
+
+                    <div class="usercodersvg">
+                        <a href='/'><i class="fab fa-instagram"></i></a>
+                        <a href='/'><i class="fab fa-telegram-plane"></i></a>
+                        <a href='/'><i class="fab fa-github"></i></a> 
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "thilinafonseka123@gmail.com",
+                Password: "F9322FC9598CC342951EEBC329D3DAA7BA36",
+                To: 'thilinafonseka123@gmail.com',
+                From: document.getElementById("email").value,
+                Subject: "New Contact Form Enquiry",
+                Body: "Name: " + document.getElementById("name").value
+                    + "<br> Email: " + document.getElementById("email").value
+                    + "<br> Phone: " + document.getElementById("phone").value
+                    + "<br> Message: " + document.getElementById("message").value
+            }).then(
+                message => alert("Message sent successfully")
+            ).catch(
+                error => alert("Failed to send message: " + error)
+            );
+        }
+    </script>
+</body>
+
+</html>

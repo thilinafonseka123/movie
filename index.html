@@ -1,0 +1,984 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makmovies</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="header">
+        <h1 class="logo" data-text="&nbsp;Makmovies&nbsp;">
+            <a href="/">&nbsp;Makmovies&nbsp;</a>
+        </h1>
+        <form class="search_bar">
+            <input type="text" placeholder="Search Movies..." />
+            <div class="searchclose" onClick={handleSearchbarClose}>
+                <IoClose />
+            </div>
+
+        </form>
+
+        <div id="navbar">
+            <div class="navlogomovie">
+                <h1 class="logo" data-text="&nbsp;Makmovies&nbsp;">
+                    <a href="/">&nbsp;Makmovies&nbsp;</a>
+                </h1>
+                <div class="navclosesvg" onClick={handleNavbarClose}>
+                    <IoClose />
+                </div>
+            </div>
+            <ul class="navbar">
+                <li>
+                    <a href="/" class="activeLink active">Home</a>
+                </li>
+                <li>
+                    <a href="/movies" class="activeLink">Movies</a>
+                </li>
+                <li>
+                    <a href="/series" class="activeLink">Series</a>
+                </li>
+                <li>
+                    <a href="/bollywood" class="activeLink">Bollywood</a>
+                </li>
+                <li>
+                    <a href="/hollywood" class="activeLink">Hollywood</a>
+                </li>
+                <li>
+                    <a href="/contact" class="activeLink">Contact</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mobile">
+            <BiSearch class="opensearchsvg" />
+            <FaBars />
+        </div>
+    </nav>
+
+
+    <div class="swiper_top_main">
+        <div class="slideimagebx flex flex-center">
+            <div class="slideimagebx">
+                <img src="public/img/action.jpg" alt="movie" loading="lazy" />
+                <div class="content" key={movie._id}>
+                    <div class="contentflex">
+                        <div class="smalimg">
+                            <img src="public/img/adventure.jpg" alt="movie" />
+                        </div>
+                        <div class="movieconte">
+                            <h1 id="header_title">Jumanji: Welcome to the Jungle</h1>
+                            <h6>Duration: <span id="header_dur">1h 53m</span></h6>
+                            <h3 id="header_gen">
+                                <span class="star">&#9733;</span>
+                                5
+                                <span>Activion, Adventure</span>
+                            </h3>
+
+                            <div class="btns">
+                                <a href="">
+                                <button class="btn_download">
+                                    <i class="fas fa-download"></i> DOWNLOAD <span>FREE</span>
+                                </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-scrollbar"></div>
+    </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makmovies</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+    <nav class="header">
+        <h1 class="logo" data-text="&nbsp;Makmovies&nbsp;">
+            <a href="/">&nbsp;Makmovies&nbsp;</a>
+        </h1>
+        <form class="search_bar">
+            <input type="text" placeholder="Search Movies..." />
+            <div class="searchclose" onclick="handleSearchbarClose()">
+                <i class="fas fa-times"></i>
+            </div>
+        </form>
+
+        <div id="navbar">
+            <div class="navlogomovie">
+                <h1 class="logo" data-text="&nbsp;Makmovies&nbsp;">
+                    <a href="/">&nbsp;Makmovies&nbsp;</a>
+                </h1>
+                <div class="navclosesvg" onclick="handleNavbarClose()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <ul class="navbar">
+                <li><a href="#" class="activeLink active">Home</a></li>
+                <li><a href="movies.html" class="activeLink">Movies</a></li>
+                <li><a href="series.html" class="activeLink">Series</a></li>
+                <li><a href="bollywood.html" class="activeLink">Bollywood</a></li>
+                <li><a href="hollywood.html" class="activeLink">Hollywood</a></li>
+                <li><a href="contact.html" class="activeLink">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="mobile">
+            <i class="fas fa-search opensearchsvg"></i>
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <div class="swiper swiper_top_main">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="slideimagebx flex flex-center">
+                    <img src="https://flixable.b-cdn.net/hulu/large/jumanji-welcome-to-the-jungle.jpg" alt="movie"
+                        loading="lazy" />
+                    <div class="content">
+                        <div class="contentflex">
+                            <div class="smalimg">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDtItdx01r3G2kkB3TiZtDMVrV4hyJ2q7PPA&s"
+                                    alt="movie" />
+                            </div>
+                            <div class="movieconte">
+                                <h1 id="header_title">Jumanji: Welcome to the Jungle</h1>
+                                <h6>Duration: <span id="header_dur">1h 53m</span></h6>
+                                <h3 id="header_gen">
+                                    <span class="star">&#9733;</span>
+                                    5
+                                    <span>Action, Adventure</span>
+                                </h3>
+                                <div class="btns">
+                                    <a href="#">
+                                        <button class="btn_download">
+                                            <i class="fas fa-download" style="margin-right: 8px;"></i> DOWNLOAD
+                                            <span>FREE</span>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="swiper-slide">
+                <div class="slideimagebx flex flex-center">
+                    <img src="public/img/adventure.jpg" alt="movie" loading="lazy" />
+                    <div class="content">
+                        <div class="contentflex">
+                            <div class="smalimg">
+                                <img src="public/img/action.jpg" alt="movie" />
+                            </div>
+                            <div class="movieconte">
+                                <h1 id="header_title">Avengers: Endgame</h1>
+                                <h6>Duration: <span id="header_dur">3h 1m</span></h6>
+                                <h3 id="header_gen">
+                                    <span class="star">&#9733;</span>
+                                    4.5
+                                    <span>Action, Sci-Fi</span>
+                                </h3>
+                                <div class="btns">
+                                    <a href="#">
+                                        <button class="btn_download">
+                                            <i class="fas fa-download" style="margin-right: 8px;"></i> DOWNLOAD
+                                            <span>FREE</span>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="swiper-slide">
+                <div class="slideimagebx flex flex-center">
+                    <img src="public/img/animation.jpg" alt="movie" loading="lazy" />
+                    <div class="content">
+                        <div class="contentflex">
+                            <div class="smalimg">
+                                <img src="public/img/adventure.jpg" alt="movie" />
+                            </div>
+                            <div class="movieconte">
+                                <h1 id="header_title">The Dark Knight</h1>
+                                <h6>Duration: <span id="header_dur">2h 32m</span></h6>
+                                <h3 id="header_gen">
+                                    <span class="star">&#9733;</span>
+                                    4.8
+                                    <span>Action, Crime</span>
+                                </h3>
+                                <div class="btns">
+                                    <a href="#">
+                                        <button class="btn_download">
+                                            <i class="fas fa-download" style="margin-right: 8px;"></i> DOWNLOAD
+                                            <span>FREE</span>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="swiper-slide">
+                <div class="slideimagebx flex flex-center">
+                    <img src="public/img/animation.jpg" alt="movie" loading="lazy" />
+                    <div class="content">
+                        <div class="contentflex">
+                            <div class="smalimg">
+                                <img src="public/img/comedy.jpg" alt="movie" />
+                            </div>
+                            <div class="movieconte">
+                                <h1 id="header_title">The Dark Knight</h1>
+                                <h6>Duration: <span id="header_dur">2h 32m</span></h6>
+                                <h3 id="header_gen">
+                                    <span class="star">&#9733;</span>
+                                    4.8
+                                    <span>Action, Crime</span>
+                                </h3>
+                                <div class="btns">
+                                    <a href="#">
+                                        <button class="btn_download">
+                                            <i class="fas fa-download" style="margin-right: 8px;"></i> DOWNLOAD
+                                            <span>FREE</span>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+        <div class="swiper-scrollbar"></div>
+    </div>
+
+    <div class="tranding_bx">
+        <li><a href="allMovies.html" class="active"><i class="fas fa-angle-double-up"></i> Latest</a></li>
+        <li><a href="movies.html"><i class="fas fa-film"></i> Movies</a></li>
+        <li><a href="series.html"><i class="fas fa-star"></i> Series</a></li>
+        <li><a href="allMovies.html"><i class="fas fa-plus"></i> Recently Added</a></li>
+    </div>
+
+
+    <div class="scrollcardssec">
+        <div class="swiper-container myswiper">
+            <div class="swiper-wrapper scrollcards">
+                <!-- Repeat this block for 10 cards -->
+                <div class="swiper-slide">
+                    <div class="card">
+                        <a href="/movies/the-dark-knight">
+                            <div class="cardimg">
+                                <img src="public/img/action.jpg" alt="movie" loading="lazy" />
+                            </div>
+                            <div class="contents">
+                                <h5>The Dark Knight</h5>
+                                <h6>
+                                    <span>2018</span>
+                                    <div class="rate">
+                                        <i class="cardfas fas fa-heart"></i>
+                                        <i class="cardfas fas fa-eye"></i>
+                                        <i class="cardfas fas fa-star"></i>
+                                        <h6>4.8</h6>
+                                    </div>
+                                </h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- Add 9 more swiper-slide blocks here with different content -->
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <a href="/movies/the-dark-knight">
+                            <div class="cardimg">
+                                <img src="public/img/adventure.jpg" alt="movie" loading="lazy" />
+                            </div>
+                            <div class="contents">
+                                <h5>The Dark Knight</h5>
+                                <h6>
+                                    <span>2018</span>
+                                    <div class="rate">
+                                        <i class="cardfas fas fa-heart"></i>
+                                        <i class="cardfas fas fa-eye"></i>
+                                        <i class="cardfas fas fa-star"></i>
+                                        <h6>4.8</h6>
+                                    </div>
+                                </h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <a href="/movies/the-dark-knight">
+                            <div class="cardimg">
+                                <img src="public/img/animation.jpg" alt="movie" loading="lazy" />
+                            </div>
+                            <div class="contents">
+                                <h5>The Dark Knight</h5>
+                                <h6>
+                                    <span>2018</span>
+                                    <div class="rate">
+                                        <i class="cardfas fas fa-heart"></i>
+                                        <i class="cardfas fas fa-eye"></i>
+                                        <i class="cardfas fas fa-star"></i>
+                                        <h6>4.8</h6>
+                                    </div>
+                                </h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <a href="/movies/the-dark-knight">
+                            <div class="cardimg">
+                                <img src="public/img/contactbg.jpg" alt="movie" loading="lazy" />
+                            </div>
+                            <div class="contents">
+                                <h5>The Dark Knight</h5>
+                                <h6>
+                                    <span>2018</span>
+                                    <div class="rate">
+                                        <i class="cardfas fas fa-heart"></i>
+                                        <i class="cardfas fas fa-eye"></i>
+                                        <i class="cardfas fas fa-star"></i>
+                                        <h6>4.8</h6>
+                                    </div>
+                                </h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <a href="/movies/the-dark-knight">
+                            <div class="cardimg">
+                                <img src="public/img/crime.jpg" alt="movie" loading="lazy" />
+                            </div>
+                            <div class="contents">
+                                <h5>The Dark Knight</h5>
+                                <h6>
+                                    <span>2018</span>
+                                    <div class="rate">
+                                        <i class="cardfas fas fa-heart"></i>
+                                        <i class="cardfas fas fa-eye"></i>
+                                        <i class="cardfas fas fa-star"></i>
+                                        <h6>4.8</h6>
+                                    </div>
+                                </h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <a href="/movies/the-dark-knight">
+                            <div class="cardimg">
+                                <img src="public/img/documentary.jpg" alt="movie" loading="lazy" />
+                            </div>
+                            <div class="contents">
+                                <h5>The Dark Knight</h5>
+                                <h6>
+                                    <span>2018</span>
+                                    <div class="rate">
+                                        <i class="cardfas fas fa-heart"></i>
+                                        <i class="cardfas fas fa-eye"></i>
+                                        <i class="cardfas fas fa-star"></i>
+                                        <h6>4.8</h6>
+                                    </div>
+                                </h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <a href="/movies/the-dark-knight">
+                            <div class="cardimg">
+                                <img src="public/img/drama.jpg" alt="movie" loading="lazy" />
+                            </div>
+                            <div class="contents">
+                                <h5>The Dark Knight</h5>
+                                <h6>
+                                    <span>2018</span>
+                                    <div class="rate">
+                                        <i class="cardfas fas fa-heart"></i>
+                                        <i class="cardfas fas fa-eye"></i>
+                                        <i class="cardfas fas fa-star"></i>
+                                        <h6>4.8</h6>
+                                    </div>
+                                </h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <a href="/movies/the-dark-knight">
+                            <div class="cardimg">
+                                <img src="public/img/fantasy.jpg" alt="movie" loading="lazy" />
+                            </div>
+                            <div class="contents">
+                                <h5>The Dark Knight</h5>
+                                <h6>
+                                    <span>2018</span>
+                                    <div class="rate">
+                                        <i class="cardfas fas fa-heart"></i>
+                                        <i class="cardfas fas fa-eye"></i>
+                                        <i class="cardfas fas fa-star"></i>
+                                        <h6>4.8</h6>
+                                    </div>
+                                </h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <a href="/movies/the-dark-knight">
+                            <div class="cardimg">
+                                <img src="public/img/horror.jpg" alt="movie" loading="lazy" />
+                            </div>
+                            <div class="contents">
+                                <h5>The Dark Knight</h5>
+                                <h6>
+                                    <span>2018</span>
+                                    <div class="rate">
+                                        <i class="cardfas fas fa-heart"></i>
+                                        <i class="cardfas fas fa-eye"></i>
+                                        <i class="cardfas fas fa-star"></i>
+                                        <h6>4.8</h6>
+                                    </div>
+                                </h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <a href="/movies/the-dark-knight">
+                            <div class="cardimg">
+                                <img src="public/img/mystery.jpg" alt="movie" loading="lazy" />
+                            </div>
+                            <div class="contents">
+                                <h5>The Dark Knight</h5>
+                                <h6>
+                                    <span>2018</span>
+                                    <div class="rate">
+                                        <i class="cardfas fas fa-heart"></i>
+                                        <i class="cardfas fas fa-eye"></i>
+                                        <i class="cardfas fas fa-star"></i>
+                                        <h6>4.8</h6>
+                                    </div>
+                                </h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <a href="/movies/the-dark-knight">
+                            <div class="cardimg">
+                                <img src="public/noimage.jpg" alt="movie" loading="lazy" />
+                            </div>
+                            <div class="contents">
+                                <h5>The Dark Knight</h5>
+                                <h6>
+                                    <span>2018</span>
+                                    <div class="rate">
+                                        <i class="cardfas fas fa-heart"></i>
+                                        <i class="cardfas fas fa-eye"></i>
+                                        <i class="cardfas fas fa-star"></i>
+                                        <h6>4.8</h6>
+                                    </div>
+                                </h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <a href="/movies/the-dark-knight">
+                            <div class="cardimg">
+                                <img src="public/img/coder.jpg" alt="movie" loading="lazy" />
+                            </div>
+                            <div class="contents">
+                                <h5>The Dark Knight</h5>
+                                <h6>
+                                    <span>2018</span>
+                                    <div class="rate">
+                                        <i class="cardfas fas fa-heart"></i>
+                                        <i class="cardfas fas fa-eye"></i>
+                                        <i class="cardfas fas fa-star"></i>
+                                        <h6>4.8</h6>
+                                    </div>
+                                </h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <a href="/movies/the-dark-knight">
+                            <div class="cardimg">
+                                <img src="public/img/comedy.jpg" alt="movie" loading="lazy" />
+                            </div>
+                            <div class="contents">
+                                <h5>The Dark Knight</h5>
+                                <h6>
+                                    <span>2018</span>
+                                    <div class="rate">
+                                        <i class="cardfas fas fa-heart"></i>
+                                        <i class="cardfas fas fa-eye"></i>
+                                        <i class="cardfas fas fa-star"></i>
+                                        <h6>4.8</h6>
+                                    </div>
+                                </h6>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="tranding_bx" style="margin-top: 40px;">
+        <li><a href="movies.html"><i class="fas fa-photo-video"></i> Movies</a></li>
+        <li><a href="series.html"><i class="fas fa-film"></i> Series</a></li>
+        <li><a href="series.html"><i class="fas fa-check"></i> Original Series</a></li>
+        <li><a href="genre.html"><i class="fas fa-clapperboard"></i> Genre</a></li>
+    </div>
+
+    <div class="moviestegs">
+        <button class="active">All Movies</button>
+        <button>Action</button>
+        <button>Adventure</button>
+        <button>Animation</button>
+        <button>comedy</button>
+        <button>Drama</button>
+        <button>Crime</button>
+        <button>Fantasy</button>
+        <button>Horror</button>
+        <button>Romance</button>
+        <button>Thriller</button>
+        <button>Science_fiction</button>
+        <button>Bollywood</button>
+        <button>Hollywood</button>
+        <button>South</button>
+        <button>Gujarati</button>
+        <button>Maravel_studio</button>
+        <button>Tv_shows</button>
+        <button>Web_series</button>
+    </div>
+
+
+    <div class="moviescontainer">
+
+        <div id="movies-list">
+            <div class="card">
+                <a href="">
+                    <div class="cardimg">
+                        <img src="public/img/action.jpg" alt="movie" loading="lazy" />
+                    </div>
+                    <div class="contents">
+                        <h5>Jumanji: Welcome to the Jungle</h5>
+                        <h6>
+                            <span>2018</span>
+                            <div class="rate">
+                                <i class="cardfas fas fa-heart"></i>
+                                <i class="cardfas fas fa-eye"></i>
+                                <i class="cardfas fas fa-star"></i>
+                                <h6>8</h6>
+                            </div>
+                        </h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div id="movies-list">
+            <div class="card">
+                <a href="">
+                    <div class="cardimg">
+                        <img src="public/img/adventure.jpg" alt="movie" loading="lazy" />
+                    </div>
+                    <div class="contents">
+                        <h5>Jumanji: Welcome to the Jungle</h5>
+                        <h6>
+                            <span>2018</span>
+                            <div class="rate">
+                                <i class="cardfas fas fa-heart"></i>
+                                <i class="cardfas fas fa-eye"></i>
+                                <i class="cardfas fas fa-star"></i>
+                                <h6>8</h6>
+                            </div>
+                        </h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div id="movies-list">
+            <div class="card">
+                <a href="">
+                    <div class="cardimg">
+                        <img src="public/img/animation.jpg" alt="movie" loading="lazy" />
+                    </div>
+                    <div class="contents">
+                        <h5>Jumanji: Welcome to the Jungle</h5>
+                        <h6>
+                            <span>2018</span>
+                            <div class="rate">
+                                <i class="cardfas fas fa-heart"></i>
+                                <i class="cardfas fas fa-eye"></i>
+                                <i class="cardfas fas fa-star"></i>
+                                <h6>8</h6>
+                            </div>
+                        </h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div id="movies-list">
+            <div class="card">
+                <a href="">
+                    <div class="cardimg">
+                        <img src="public/img/mystery.jpg" alt="movie" loading="lazy" />
+                    </div>
+                    <div class="contents">
+                        <h5>Jumanji: Welcome to the Jungle</h5>
+                        <h6>
+                            <span>2018</span>
+                            <div class="rate">
+                                <i class="cardfas fas fa-heart"></i>
+                                <i class="cardfas fas fa-eye"></i>
+                                <i class="cardfas fas fa-star"></i>
+                                <h6>8</h6>
+                            </div>
+                        </h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <div id="movies-list">
+            <div class="card">
+                <a href="">
+                    <div class="cardimg">
+                        <img src="public/img/horror.jpg" alt="movie" loading="lazy" />
+                    </div>
+                    <div class="contents">
+                        <h5>Jumanji: Welcome to the Jungle</h5>
+                        <h6>
+                            <span>2018</span>
+                            <div class="rate">
+                                <i class="cardfas fas fa-heart"></i>
+                                <i class="cardfas fas fa-eye"></i>
+                                <i class="cardfas fas fa-star"></i>
+                                <h6>8</h6>
+                            </div>
+                        </h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <div id="movies-list">
+            <div class="card">
+                <a href="">
+                    <div class="cardimg">
+                        <img src="public/img/contactbg.jpg" alt="movie" loading="lazy" />
+                    </div>
+                    <div class="contents">
+                        <h5>Jumanji: Welcome to the Jungle</h5>
+                        <h6>
+                            <span>2018</span>
+                            <div class="rate">
+                                <i class="cardfas fas fa-heart"></i>
+                                <i class="cardfas fas fa-eye"></i>
+                                <i class="cardfas fas fa-star"></i>
+                                <h6>8</h6>
+                            </div>
+                        </h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div id="movies-list">
+            <div class="card">
+                <a href="">
+                    <div class="cardimg">
+                        <img src="public/img/crime.jpg" alt="movie" loading="lazy" />
+                    </div>
+                    <div class="contents">
+                        <h5>Jumanji: Welcome to the Jungle</h5>
+                        <h6>
+                            <span>2018</span>
+                            <div class="rate">
+                                <i class="cardfas fas fa-heart"></i>
+                                <i class="cardfas fas fa-eye"></i>
+                                <i class="cardfas fas fa-star"></i>
+                                <h6>8</h6>
+                            </div>
+                        </h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div id="movies-list">
+            <div class="card">
+                <a href="">
+                    <div class="cardimg">
+                        <img src="public/img/documentary.jpg" alt="movie" loading="lazy" />
+                    </div>
+                    <div class="contents">
+                        <h5>Jumanji: Welcome to the Jungle</h5>
+                        <h6>
+                            <span>2018</span>
+                            <div class="rate">
+                                <i class="cardfas fas fa-heart"></i>
+                                <i class="cardfas fas fa-eye"></i>
+                                <i class="cardfas fas fa-star"></i>
+                                <h6>8</h6>
+                            </div>
+                        </h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div id="movies-list">
+            <div class="card">
+                <a href="">
+                    <div class="cardimg">
+                        <img src="public/img/drama.jpg" alt="movie" loading="lazy" />
+                    </div>
+                    <div class="contents">
+                        <h5>Jumanji: Welcome to the Jungle</h5>
+                        <h6>
+                            <span>2018</span>
+                            <div class="rate">
+                                <i class="cardfas fas fa-heart"></i>
+                                <i class="cardfas fas fa-eye"></i>
+                                <i class="cardfas fas fa-star"></i>
+                                <h6>8</h6>
+                            </div>
+                        </h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div id="movies-list">
+            <div class="card">
+                <a href="">
+                    <div class="cardimg">
+                        <img src="public/img/fantasy.jpg" alt="movie" loading="lazy" />
+                    </div>
+                    <div class="contents">
+                        <h5>Jumanji: Welcome to the Jungle</h5>
+                        <h6>
+                            <span>2018</span>
+                            <div class="rate">
+                                <i class="cardfas fas fa-heart"></i>
+                                <i class="cardfas fas fa-eye"></i>
+                                <i class="cardfas fas fa-star"></i>
+                                <h6>8</h6>
+                            </div>
+                        </h6>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="nextpagelink">
+        <a href="/all"><button class="cssbuttons_io_button">Next Page
+                <div class="icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </button>
+        </a>
+    </div>
+
+
+    <footer class='footer'>
+        <section class="m-auto footersec">
+            <div class="fcontent">
+                <div class="flogo">
+                    <h1><a href='/'>Makmovies</a></h1>
+                </div>
+                <div class="quicklink">
+                    <li><a href='/'>Home</a></li>
+                    <li><a href='/movies'>Movies</a></li>
+                    <li><a href='/series'>Series</a></li>
+                    <li><a href='/genre'>Genre</a></li>
+                    <li><a href='/all'>All Movies</a></li>
+                    <li><a href='/genre'>Category</a></li>
+                    <li><a href='/bollywood'>Bollywood</a></li>
+                    <li><a href='/hollywood'>Hollywood</a></li>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright &copy; 2024 All rights reserved | by&nbsp;<a href="/">Makmovies</a></p>
+            </div>
+            <div class="fperasec">
+                <p>Disclaimer :- We does not host any files on it's servers. All files or contents hosted on third party websites | we does not accept responsibility for contents hosted on third party websites. we just index those links which are already available in internet.</p>
+            </div>
+        </section>
+    </footer>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".swiper_top_main", {
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            direction: "horizontal",
+            loop: true,
+            speed: 1200,
+            watchSlidesProgress: true,
+            parallax: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+
+        });
+
+
+        var swiper = new Swiper(".myswiper", {
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            direction: "horizontal",
+            loop: true,
+            speed: 1200,
+            watchSlidesProgress: true,
+            parallax: true,
+            slidesPerView: 8,
+            spaceBetween: 10,
+            breakpoints: {
+                1587: {
+                    slidesPerView: 8,
+                    spaceBetween: 10
+                },
+                1500: {
+                    slidesPerView: 7,
+                    spaceBetween: 10
+                },
+                1200: {
+                    slidesPerView: 6,
+                    spaceBetween: 10
+                },
+                1040: {
+                    slidesPerView: 5,
+                    spaceBetween: 10
+                },
+                992: {
+                    slidesPerView: 4,
+                    spaceBetween: 10
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 10
+                },
+                650: {
+                    slidesPerView: 3,
+                    spaceBetween: 10
+                },
+                400: {
+                    slidesPerView: 2,
+                    spaceBetween: 10
+                },
+                370: {
+                    slidesPerView: 2,
+                    spaceBetween: 10
+                },
+                350: {
+                    slidesPerView: 2,
+                    spaceBetween: 10
+                },
+                300: {
+                    slidesPerView: 2,
+                    spaceBetween: 10
+                },
+                250: {
+                    slidesPerView: 1,
+                    spaceBetween: 5
+                },
+                200: {
+                    slidesPerView: 1,
+                    spaceBetween: 5
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
